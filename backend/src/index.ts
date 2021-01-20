@@ -4,7 +4,11 @@ import {createConnection} from "typeorm";
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import routes from './routes'
+import {config} from 'dotenv'
+
+
 createConnection().then(connection => {
+    config()
     const app = express()
     var router = express.Router()
 
