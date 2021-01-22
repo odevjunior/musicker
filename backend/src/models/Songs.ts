@@ -17,5 +17,5 @@ export class Songs {
     linkOfSong:string;
 
     @ManyToOne(() => Users, users => users.id)
-    addedBy:Users;
+    addedById:number;
 }
