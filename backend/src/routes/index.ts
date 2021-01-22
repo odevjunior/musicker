@@ -1,9 +1,14 @@
-import {Request, response, Response, Router} from 'express'
+import {NextFunction, Request, response, Response, Router} from 'express'
+import multer from 'multer'
 import UsersController from '../controllers/UsersController'
+import SongsController from'../controllers/SongsController'
+import UploadController from '../controllers/UploadController'
+import { env } from 'process'
 
 export default (router):Router => {
     const usersController = new UsersController()
-
+    const songsController = new SongsController()
+    const upload = UploadController.makeUpload()
     router.get("/", (req: Request, res: Response) => {
         res.json("olá mundo")
     })
@@ -72,6 +77,34 @@ export default (router):Router => {
         })
         .catch(error => {
             res.status(error.status)
+            res.json(error)
+        })
+    })
+
+    //songs routes
+
+    router.post('/uploadSong', upload.any(), (req:Request, res:Response, next:NextFunction) => {
+        try {            
+            const {title, author, filePath, idUser} = req.body
+            songsController.insertSong(title, author, filePath, idUser)
+            .then(resp => {
+                res.status(200)
+                res.json("Song created success")
+            })
+            .catch(error => {
+                res.json(error)
+            })
+        } catch (error) {
+            res.json(error)
+        }
+    })
+
+    router.get("/songs/:title", (req, res) => {
+        songsController.getSongsByTitle(req.params.title)
+        .then(resp => {
+            res.json(resp)
+        })
+        .catch(error => {
             res.json(error)
         })
     })
