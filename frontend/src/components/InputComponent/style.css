@@ -1,0 +1,12 @@
+.inputComponent input {
+  width: 100%;
+  height: 55px;
+  max-width: 100%;
+  background: #1c2326;
+  border-radius: 10px;
+  border: none;
+  text-indent: 10px;
+  font-family: 'Russo One';
+  font-size: 16px;
+  font-weight: 300;
+}
