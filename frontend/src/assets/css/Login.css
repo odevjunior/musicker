@@ -1,0 +1,150 @@
+#loginPage {
+    width:100%;
+    height:100%;
+    background-image: linear-gradient(to bottom,rgba(21, 26, 28, 0.9), rgba(21, 26, 28, 0.85)), url('../imgs/logo1.png');
+    background-repeat: repeat;
+    background-size: 15%;
+    background-position: center;
+    background-color: #222;
+    display:flex;
+    position: absolute;
+    flex-direction:row;
+}
+
+#loginPage .login_box {
+    width:30%;
+    height:100%;
+    justify-self: flex-end;
+    align-self: flex-end;
+    background-color: rgb(21, 26, 28);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+#loginPage .login_box h1 {
+    font-family: Russo One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 104px;
+    line-height: 48px;
+    margin:0px;
+    color: #D92332;
+    text-transform: capitalize;
+}
+
+#loginPage .login_box form, #loginPage .login_box form div {
+    width: 93%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction: column;
+    padding:10px;
+}
+
+#loginPage .login_box form div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+}
+
+#loginPage .login_box form div button {
+    width:15%;
+    height: 55px;
+    background-color: #D92332;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border:none;
+    font-size: 30px;
+}
+
+
+#loginPage #logo_box {
+    width: 60%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#loginPage #logo_box  img {
+    max-width: 70%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#loginPage .login_box #inputComponent-passwordInput {
+    width:80%;
+}
+
+#loginPage .login_box .forgot_password {
+    width:80%;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #D92332;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+#loginPage .login_box .sign_up {
+    max-width:30%;
+    color: #D92332;
+    font-size:24px;
+    text-transform: uppercase;
+    position:fixed;
+    bottom:10px;
+}
+
+::-webkit-input-placeholder {
+   color: #D92332;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #D92332;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #D92332;  
+}
+
+:-ms-input-placeholder {  
+   color: #D92332;  
+}
+
+@media screen and (max-width:768px) {
+    #loginPage {
+        flex-direction: column !important;
+        background-size: 30% !important;
+    }
+    #loginPage .login_box {
+        width: 100% !important;
+        height:55% !important;
+    }
+    #loginPage #logo_box {
+        width: 100% !important;
+        height:45% !important;
+    }
+
+    #loginPage .login_box h1 {
+        font-size:40px !important;
+        text-transform:uppercase !important;
+    }
+
+    #loginPage .login_box .sign_up {
+        color: #D92332;
+        font-size:16px !important;
+        padding-top:30px;
+        text-transform: uppercase;
+        max-width: 35% !important;
+    }
+    #loginPage .login_box #email_input {
+        width: 85% !important;
+    }
+    div#inputComponent-passwordInput {
+        padding: 0px !important;
+    }
+
+
+}
