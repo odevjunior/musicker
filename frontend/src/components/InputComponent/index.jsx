@@ -3,9 +3,17 @@ import './style.css';
 
 export default ({
   // eslint-disable-next-line react/prop-types
-  name, id, placeholder, className, type,
+  name, id, placeholder, className, type, value, onChange,
 }) => (
   <div id={`inputComponent-${id}`} className="inputComponent">
-    <input type={type} className={className} placeholder={placeholder} name={name} id={id} />
+    <input
+      type={type}
+      className={className}
+      placeholder={placeholder}
+      name={name}
+      id={id}
+      value={value}
+      onChange={onChange}
+    />
   </div>
 );
